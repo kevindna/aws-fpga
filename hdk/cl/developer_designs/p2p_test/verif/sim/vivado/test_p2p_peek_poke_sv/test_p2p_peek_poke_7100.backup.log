@@ -1,0 +1,1202 @@
+#-----------------------------------------------------------
+# xsim v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Tue Jun 13 18:49:53 2023
+# Process ID: 7100
+# Current directory: /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/sim/vivado/test_p2p_peek_poke_sv
+# Command line: xsim -log test_p2p_peek_poke.log -mode tcl -source {xsim.dir/tb/xsim_script.tcl}
+# Log file: /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/sim/vivado/test_p2p_peek_poke_sv/test_p2p_peek_poke.log
+# Journal file: /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/sim/vivado/test_p2p_peek_poke_sv/xsim.jou
+# Running On: ip-172-31-6-247.ec2.internal, OS: Linux, CPU Frequency: 3399.994 MHz, CPU Physical cores: 4, Host memory: 66548 MB
+#-----------------------------------------------------------
+source xsim.dir/tb/xsim_script.tcl
+# xsim {tb} -autoloadwcfg -tclbatch {/home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/scripts/waves.tcl} -runall
+Time resolution is 1 ps
+WARNING: [Simtcl 6-25] Warning: Both '-runall' and '-tclbatch' were specified. The '-runall' was ignored
+source /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/scripts/waves.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     current_scope /tb/card/fpga/CL
+##     add_wave -r CL_PCIM_MSTR 
+##     add_wave -r CL_OCL_SLV
+##     add_wave -r /test_p2p_peek_poke
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 307712 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 266240 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 307712 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 266240 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 307712 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 307712 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 307712 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 266240 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 266240 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+WARNING: [Wavedata 42-489] Can't add object "/tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/mem" to the wave window because it has 266240 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+## run 200 us 
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+Loading timesets for 'tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model .LoadTiming' @0
+	Loaded timeset:TS_1875
+	Loaded timeset:TS_1500
+	Loaded timeset:TS_1250
+	Loaded timeset:TS_1072
+	Loaded timeset:TS_938
+	Loaded timeset:TS_833
+	Loaded timeset:TS_750
+	Loaded timeset:TS_682
+	Loaded timeset:TS_625
+Model based on DDR4 DDS version 0.999 6/06/2014 (build data 5/06/2016)
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model :Configured as x4 8G stack:1
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+Value is 
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_C/CL_TST/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_C.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_A/CL_TST/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_A.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_B/CL_TST/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_B.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_DMA_PCIS_SLV/CL_TST_DDR_D/CL_TST/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_DMA_PCIS_SLV.CL_TST_DDR_D.CL_TST.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/WRITE_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.WRITE_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/READ_INST_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_17985  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.READ_INST_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18071  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_TRK_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_TRK_MD_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18088  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_TRK_MD_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_ADDR_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18108  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_ADDR_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_DAT_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_DAT_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_PCIM_MSTR/CL_TST_PCI/RD_EXP_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_18125  Scope: tb.card.fpga.CL.CL_PCIM_MSTR.CL_TST_PCI.RD_EXP_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb.card.fpga.CL.CL_SDA_SLV.AXIL_SLAVE.AXIL_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_SDA_SLV/AXIL_SLAVE/AXIL_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_55082  Scope: tb.card.fpga.CL.CL_SDA_SLV.AXIL_SLAVE.AXIL_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 491
+Info: [XPM_MEMORY 20-2] MEMORY_INIT_FILE (none), MEMORY_INIT_PARAM together specify no memory initialization. Initial memory contents will be all 0's. tb.card.fpga.CL.CL_SDA_SLV.AXIL_SLAVE.AXIL_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  0
+Time: 1 ps  Iteration: 0  Process: /tb/card/fpga/CL/CL_SDA_SLV/AXIL_SLAVE/AXIL_RAM/xpm_memory_tdpram_inst/xpm_memory_base_inst/Initial297_55082  Scope: tb.card.fpga.CL.CL_SDA_SLV.AXIL_SLAVE.AXIL_RAM.xpm_memory_tdpram_inst.xpm_memory_base_inst.config_drc  File: /opt/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 493
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[3].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[4].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[5].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[6].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[7].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[8].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[9].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[10].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk1.DDR4_0 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[11].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[3].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[4].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[5].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[6].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[7].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[8].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[9].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[10].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk2.DDR4_1 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[11].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[3].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[4].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[5].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[6].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[7].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[8].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[9].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[10].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.sh.DDR4_3.inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[11].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[3].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[4].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[5].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[6].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[7].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[8].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[9].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[10].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+Info: [Unisim HPIO_VREF-1] Fabric Tune Value changed to 0011101. Instance: tb.card.fpga.CL.SH_DDR.\ddr_cores.genblk3.DDR4_2 .inst.u_ddr4_mem_intfc.u_mig_ddr4_phy.inst.u_ddr_iob.\genByte[11].u_ddr_iob_byte .\genblk1.genVref.u_hpio_vref 
+[             7074000] : Programming cl_tst registers for PCIe
+[             7734000] : Round trip test
+[            13534000] : Throughput test
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @25959376
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_C.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @26079328
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28111848
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28118512
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[0].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[1].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[2].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[3].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[4].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[5].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[6].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[7].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[8].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28125176
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_A.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28231800
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_B.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28238464
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[9].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[10].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[11].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[12].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[13].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[14].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[15].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[16].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+tb.card.u_ddr4_rdimm_D.\rcd_enabled.NOT_LRDIMM.u_ddr4_dimm .\rank_instances[0].even_ranks.u_ddr4_rank .\Micron_model.instance_of_sdram_devices[17].micron_mem_model.u_ddr4_model .always_diff_ck.if_diff_ck:Initialization complete @28245128
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:00.57 ; elapsed = 00:05:00 . Memory (MB): peak = 2947.848 ; gain = 0.000 ; free physical = 57112 ; free virtual = 70437
+INFO: [Common 17-344] 'run' was cancelled
+xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:05:03 . Memory (MB): peak = 2947.848 ; gain = 836.391 ; free physical = 57112 ; free virtual = 70437
+INFO: [Common 17-344] 'source' was cancelled
+INFO: xsimkernel Simulation Memory Usage: 939636 KB (Peak: 939636 KB), Simulation CPU Usage: 300770 ms
+INFO: [Common 17-206] Exiting xsim at Tue Jun 13 18:55:04 2023...

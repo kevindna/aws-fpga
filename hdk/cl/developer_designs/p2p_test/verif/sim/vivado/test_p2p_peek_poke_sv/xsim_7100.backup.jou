@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# xsim v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Tue Jun 13 18:49:53 2023
+# Process ID: 7100
+# Current directory: /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/sim/vivado/test_p2p_peek_poke_sv
+# Command line: xsim -log test_p2p_peek_poke.log -mode tcl -source {xsim.dir/tb/xsim_script.tcl}
+# Log file: /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/sim/vivado/test_p2p_peek_poke_sv/test_p2p_peek_poke.log
+# Journal file: /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/sim/vivado/test_p2p_peek_poke_sv/xsim.jou
+# Running On: ip-172-31-6-247.ec2.internal, OS: Linux, CPU Frequency: 3399.994 MHz, CPU Physical cores: 4, Host memory: 66548 MB
+#-----------------------------------------------------------
+source xsim.dir/tb/xsim_script.tcl
+source /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/verif/scripts/waves.tcl

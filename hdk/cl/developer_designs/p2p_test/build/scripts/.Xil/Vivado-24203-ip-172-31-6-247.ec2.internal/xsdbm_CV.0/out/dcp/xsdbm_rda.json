@@ -1,0 +1,30 @@
+{
+    "Report Information": {
+        "Copyright": "Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.",
+        "Tool Version": "Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021",
+        "Date": "Mon Jun 12 06:45:13 2023",
+        "Host": "ip-172-31-6-247.ec2.internal running 64-bit CentOS Linux release 7.9.2009 (Core)",
+        "Command": "report_design_analysis -qor_summary -disable_device_warning -json /home/centos/aws-fpga/hdk/cl/developer_designs/p2p_test/build/scripts/.Xil/Vivado-24203-ip-172-31-6-247.ec2.internal/dc_drv.0/dc/prj_ip.runs/xsdbm_synth_1/.Xil/Vivado-25909-ip-172-31-6-247.ec2.internal/dcp1/xsdbm_rda.json",
+        "Design": "xsdbm",
+        "Device": "xcvu9p",
+        "Design State": "Synthesized"
+    },
+    "Design QoR Summary": [{
+            "Task Name": "synth_design",
+            "Options": "",
+            "Directives": "",
+            "Runtime(mins)": "0",
+            "Wns(ns)": "",
+            "Tns(ns)": "",
+            "Whs(ns)": "",
+            "Ths(ns)": "",
+            "RQA": "",
+            "Global Cong Level N-E-S-W": "",
+            "Global Cong Tile% N-E-S-W": "",
+            "Long Cong Level N-E-S-W": "",
+            "Long Cong Tile% N-E-S-W": "",
+            "Short Cong Level N-E-S-W": "",
+            "Short Cong Tile% N-E-S-W": "",
+            "Number of threads": "4"
+        }]
+}
