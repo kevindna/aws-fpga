@@ -76,6 +76,7 @@ axi_bus_t cl_sh_ddr_bus();
 axi_bus_t sda_cl_bus();
 axi_bus_t sh_ocl_bus();
 
+cfg_bus_t pcim_p2p_tst_cfg_bus();
 cfg_bus_t pcim_tst_cfg_bus();
 cfg_bus_t ddra_tst_cfg_bus();
 cfg_bus_t ddrb_tst_cfg_bus();
@@ -362,6 +363,7 @@ cl_pcim_mstr CL_PCIM_MSTR (
      .aresetn(pcim_mstr_sync_rst_n),
 
      .cfg_bus(pcim_tst_cfg_bus),
+     .p2p_cfg_bus(pcim_p2p_tst_cfg_bus),
 
      .cl_sh_pcim_bus     (cl_sh_pcim_bus)
 );
@@ -399,6 +401,7 @@ cl_ocl_slv CL_OCL_SLV (
 
    .sh_ocl_bus  (sh_ocl_bus),
 
+   .pcim_p2p_tst_cfg_bus(pcim_p2p_tst_cfg_bus),
    .pcim_tst_cfg_bus(pcim_tst_cfg_bus),
    .ddra_tst_cfg_bus(ddra_tst_cfg_bus),
    .ddrb_tst_cfg_bus(ddrb_tst_cfg_bus),

@@ -27,6 +27,11 @@ module  cl_tst #(parameter DATA_WIDTH=512, parameter NUM_RD_TAG=512) (
 
    output logic atg_enable,
 
+   // Kevin Added
+   input logic [1:0] test_cntrl,
+   output logic tx_done,
+
+
    output logic[8:0] awid,
    output logic[63:0] awaddr,
    output logic[7:0] awlen,
@@ -417,11 +422,19 @@ always @(posedge clk)
          cfg_rd_loop_iter[63:32] <= cfg_wdata_q;
    end
 
-assign cfg_wr_go = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'h8) && cfg_wdata_q[0]) && !wr_inp;
-assign cfg_rd_go = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'h8) && cfg_wdata_q[1]) && !rd_inp;
+// assign cfg_wr_go = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'h8) && cfg_wdata_q[0]) && !wr_inp;
+// assign cfg_rd_go = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'h8) && cfg_wdata_q[1]) && !rd_inp;
 
-assign cfg_wr_stop = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'h8) && ~cfg_wdata_q[0]);
-assign cfg_rd_stop = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'h8) && ~cfg_wdata_q[1]);
+// assign cfg_wr_stop = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'h8) && ~cfg_wdata_q[0]);
+// assign cfg_rd_stop = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'h8) && ~cfg_wdata_q[1]);
+
+// KEVIN HERE
+assign cfg_wr_go = (cfg_wr_stretch && tst_cfg_ack && ((cfg_addr_q==8'h8) && cfg_wdata_q[0]) || test_cntrl[1]) && !wr_inp;
+assign cfg_rd_go = (cfg_wr_stretch && tst_cfg_ack && ((cfg_addr_q==8'h8) && cfg_wdata_q[1]) || test_cntrl[0]) && !rd_inp;
+
+assign cfg_wr_stop = (cfg_wr_stretch && tst_cfg_ack && ((cfg_addr_q==8'h8) && ~cfg_wdata_q[0]) || ~test_cntrl[1]);
+assign cfg_rd_stop = (cfg_wr_stretch && tst_cfg_ack && ((cfg_addr_q==8'h8) && ~cfg_wdata_q[1]) || ~test_cntrl[0]);
+
 
 assign cfg_write_reset = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'hc) && cfg_wdata_q[0]);
 assign cfg_read_reset = (cfg_wr_stretch && tst_cfg_ack && (cfg_addr_q==8'hc) && cfg_wdata_q[1]);
@@ -628,6 +641,9 @@ begin
 
    endcase
 end
+
+// KEVIN ADDED
+assign tx_done = (wr_inst_done || wr_stop_pend);
 
 always_ff @(posedge clk)
    if (!sync_rst_n)

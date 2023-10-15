@@ -18,19 +18,50 @@ module cl_pcim_mstr (
    input aresetn,
 
    cfg_bus_t.master cfg_bus,
+   cfg_bus_t.master p2p_cfg_bus,
 
    axi_bus_t.slave cl_sh_pcim_bus
 
 );
 
 axi_bus_t cl_sh_pcim_q();
+logic tx_done;
+logic [1:0] test_cntrl;
+logic p2p_ack;
+logic atg_ack;
+logic [31:0] p2p_rd_data;
+logic [31:0] atg_rd_data;
+
+// Mux read signals between P2P test unit and ATG
+// assign cfg_bus.ack   = (cfg_bus.addr >= 32'hE00) ? p2p_ack : atg_ack;
+// assign cfg_bus.rdata = (cfg_bus.addr >= 32'hE00) ? p2p_rd_data : atg_rd_data;
+
+
+//-------------------------------------
+// Testing unit
+//-------------------------------------
+
+p2p_test  p2p_test0 (
+  .clk(aclk),
+  .rst_n(aresetn),
+  .cfg_addr(p2p_cfg_bus.addr),
+  .cfg_wdata(p2p_cfg_bus.wdata),
+  .cfg_wr(p2p_cfg_bus.wr),
+  .cfg_rd(p2p_cfg_bus.rd),
+  .tst_cfg_ack(p2p_cfg_bus.ack),
+  .cfg_rd_data(p2p_cfg_bus.rdata),
+  .pcim_arrdy(1'b0),                    // Unused
+  .pcim_rvalid(cl_sh_pcim_bus.rvalid),
+  .tp_tx_done(tx_done),
+  .pcim_cntrl(test_cntrl),
+  .write_p2p_en());
 
 
 //-------------------------------------
 // ATG for genrating PCIM AXI transfers
 //-------------------------------------
    cl_tst #(.DATA_WIDTH(512)) CL_TST_PCI (
-   
+
          .clk(aclk),
          .rst_n(aresetn),
 
@@ -42,9 +73,12 @@ axi_bus_t cl_sh_pcim_q();
          .tst_cfg_rdata(cfg_bus.rdata),
 
          .atg_enable(),
-  
+
+         .test_cntrl(test_cntrl),
+         .tx_done(tx_done),
+
          .awid(cl_sh_pcim_q.awid[8:0]),
-         .awaddr(cl_sh_pcim_q.awaddr), 
+         .awaddr(cl_sh_pcim_q.awaddr),
          .awlen(cl_sh_pcim_q.awlen),
          .awvalid(cl_sh_pcim_q.awvalid),
          .awuser(),
@@ -86,7 +120,7 @@ axi_bus_t cl_sh_pcim_q();
    axi_register_slice PCI_AXI4_REG_SLC (
      .aclk           (aclk),
      .aresetn        (aresetn),
-                                                                                                                         
+
      .s_axi_awid     ({7'b0, cl_sh_pcim_q.awid[8:0]}),
      .s_axi_awaddr   (cl_sh_pcim_q.awaddr),
      .s_axi_awlen    (cl_sh_pcim_q.awlen),
@@ -113,34 +147,34 @@ axi_bus_t cl_sh_pcim_q();
      .s_axi_rresp    (cl_sh_pcim_q.rresp),
      .s_axi_rlast    (cl_sh_pcim_q.rlast),
      .s_axi_rvalid   (cl_sh_pcim_q.rvalid),
-     .s_axi_rready   (cl_sh_pcim_q.rready),  
+     .s_axi_rready   (cl_sh_pcim_q.rready),
 
-     .m_axi_awid     (cl_sh_pcim_bus.awid),   
-     .m_axi_awaddr   (cl_sh_pcim_bus.awaddr), 
-     .m_axi_awlen    (cl_sh_pcim_bus.awlen),  
-     .m_axi_awsize   (cl_sh_pcim_bus.awsize), 
+     .m_axi_awid     (cl_sh_pcim_bus.awid),
+     .m_axi_awaddr   (cl_sh_pcim_bus.awaddr),
+     .m_axi_awlen    (cl_sh_pcim_bus.awlen),
+     .m_axi_awsize   (cl_sh_pcim_bus.awsize),
      .m_axi_awvalid  (cl_sh_pcim_bus.awvalid),
      .m_axi_awready  (cl_sh_pcim_bus.awready),
-     .m_axi_wdata    (cl_sh_pcim_bus.wdata),  
-     .m_axi_wstrb    (cl_sh_pcim_bus.wstrb),  
-     .m_axi_wlast    (cl_sh_pcim_bus.wlast),  
-     .m_axi_wvalid   (cl_sh_pcim_bus.wvalid), 
-     .m_axi_wready   (cl_sh_pcim_bus.wready), 
-     .m_axi_bid      (cl_sh_pcim_bus.bid),    
-     .m_axi_bresp    (cl_sh_pcim_bus.bresp),  
-     .m_axi_bvalid   (cl_sh_pcim_bus.bvalid), 
-     .m_axi_bready   (cl_sh_pcim_bus.bready), 
-     .m_axi_arid     (cl_sh_pcim_bus.arid),   
-     .m_axi_araddr   (cl_sh_pcim_bus.araddr), 
-     .m_axi_arlen    (cl_sh_pcim_bus.arlen),  
-     .m_axi_arsize   (cl_sh_pcim_bus.arsize), 
+     .m_axi_wdata    (cl_sh_pcim_bus.wdata),
+     .m_axi_wstrb    (cl_sh_pcim_bus.wstrb),
+     .m_axi_wlast    (cl_sh_pcim_bus.wlast),
+     .m_axi_wvalid   (cl_sh_pcim_bus.wvalid),
+     .m_axi_wready   (cl_sh_pcim_bus.wready),
+     .m_axi_bid      (cl_sh_pcim_bus.bid),
+     .m_axi_bresp    (cl_sh_pcim_bus.bresp),
+     .m_axi_bvalid   (cl_sh_pcim_bus.bvalid),
+     .m_axi_bready   (cl_sh_pcim_bus.bready),
+     .m_axi_arid     (cl_sh_pcim_bus.arid),
+     .m_axi_araddr   (cl_sh_pcim_bus.araddr),
+     .m_axi_arlen    (cl_sh_pcim_bus.arlen),
+     .m_axi_arsize   (cl_sh_pcim_bus.arsize),
      .m_axi_arvalid  (cl_sh_pcim_bus.arvalid),
      .m_axi_arready  (cl_sh_pcim_bus.arready),
-     .m_axi_rid      (cl_sh_pcim_bus.rid),    
-     .m_axi_rdata    (cl_sh_pcim_bus.rdata),  
-     .m_axi_rresp    (cl_sh_pcim_bus.rresp),  
-     .m_axi_rlast    (cl_sh_pcim_bus.rlast),  
-     .m_axi_rvalid   (cl_sh_pcim_bus.rvalid), 
+     .m_axi_rid      (cl_sh_pcim_bus.rid),
+     .m_axi_rdata    (cl_sh_pcim_bus.rdata),
+     .m_axi_rresp    (cl_sh_pcim_bus.rresp),
+     .m_axi_rlast    (cl_sh_pcim_bus.rlast),
+     .m_axi_rvalid   (cl_sh_pcim_bus.rvalid),
      .m_axi_rready   (cl_sh_pcim_bus.rready)
      );
 

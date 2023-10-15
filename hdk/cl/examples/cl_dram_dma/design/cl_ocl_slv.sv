@@ -22,6 +22,7 @@ module cl_ocl_slv (
 
    axi_bus_t.master sh_ocl_bus,
 
+   cfg_bus_t.slave pcim_p2p_tst_cfg_bus,
    cfg_bus_t.slave pcim_tst_cfg_bus,
    cfg_bus_t.slave ddra_tst_cfg_bus,
    cfg_bus_t.slave ddrb_tst_cfg_bus,
@@ -332,6 +333,11 @@ assign axi_mstr_cfg_bus.wdata = slv_tst_wdata[5];
 assign axi_mstr_cfg_bus.wr = slv_tst_wr[5];
 assign axi_mstr_cfg_bus.rd = slv_tst_rd[5];
 
+assign pcim_p2p_tst_cfg_bus.addr = slv_tst_addr[14];
+assign pcim_p2p_tst_cfg_bus.wdata = slv_tst_wdata[14];
+assign pcim_p2p_tst_cfg_bus.wr = slv_tst_wr[14];
+assign pcim_p2p_tst_cfg_bus.rd = slv_tst_rd[14];
+
 assign int_tst_cfg_bus.addr = slv_tst_addr[13];
 assign int_tst_cfg_bus.wdata = slv_tst_wdata[13];
 assign int_tst_cfg_bus.wr = slv_tst_wr[13];
@@ -358,14 +364,17 @@ always_comb begin
   //for AXI Master
   tst_slv_ack[5] = axi_mstr_cfg_bus.ack;
   tst_slv_rdata[5] = axi_mstr_cfg_bus.rdata;
+  //for P2P test
+  tst_slv_ack[14] = pcim_p2p_tst_cfg_bus.ack;
+  tst_slv_rdata[14] = pcim_p2p_tst_cfg_bus.rdata;
   //for int ATG
   tst_slv_ack[13] = int_tst_cfg_bus.ack;
   tst_slv_rdata[13] = int_tst_cfg_bus.rdata;
-  for(int i=6; i<13; i++) begin
+  for(int i=6; i<14; i++) begin
     tst_slv_ack[i] = 1'b1;
     tst_slv_rdata[i] = 32'hdead_beef;
   end
-  for(int i=14; i<16; i++) begin
+  for(int i=15; i<16; i++) begin
     tst_slv_ack[i] = 1'b1;
     tst_slv_rdata[i] = 32'hdead_beef;
   end
